@@ -1,13 +1,14 @@
-# Visual Bukkit
-Visual Bukkit is a visual programming language for Bukkit plugins, allowing you to create plugins without knowing Java.
+# **Visual Spigot**
+<sup>A Fork of Visual Bukkit</sup><br/>
+*An easy way to create Spigot plugins without a single line of code.*
 
-### Quick Links
-- [Download](https://github.com/OfficialDonut/VisualBukkit/releases)
-- [Documentation](https://github.com/OfficialDonut/VisualBukkit/wiki)
-- [Discord](https://discord.gg/ugkvGpu)
+## Get The Latest Version [here](https://github.com/Gryzle/VisualSpigot/releases).
+![](https://cdn.glitch.com/ad890a95-b860-436b-9d8e-c60e330898e5%2FGitHub%20Media.png?v=1612040931227)
 
-[![](https://www.ej-technologies.com/images/product_banners/install4j_small.png) Multi-platform installer built with Install4J](https://www.ej-technologies.com/products/install4j/overview.html)
+## Visual Spigot aims to be a more modern and optmized version of Visual Bukkit. Visual Bukkit and its source can be found [here](https://github.com/OfficialDonut/VisualBukkit).
+*Visual Spigot follows all the guidelines mentioned in Visual Bukkit's GNU Affero General Public Liscense v3.0. If there's any issues with Visual Spigot, please create a support ticket in the issues panel, or contact me either on Discord, `Gryzle#5593`, or by email at `igryzle@gmail.com`*
 
-![](https://i.imgur.com/5qFPURS.png)
-"# visual-spigot" 
-"# visual-spigot" 
+### Contributers
+- Gryzle
+- Shmezi
+- OfficialDonut (Creator of Visual Bukkit)
