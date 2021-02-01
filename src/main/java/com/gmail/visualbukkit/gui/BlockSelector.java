@@ -169,7 +169,6 @@ public class BlockSelector extends TabPane {
 
             content.getChildren().addAll(new VBox(10, titleLabel, new CenteredHBox(5, new Label("Search"), searchField)), scrollPane);
             content.setPadding(new Insets(10, 0, 10, 10));
-            scrollPane.getContent().setStyle("-fx-border-radius: 15; -fx-background-radius: 15;");
             setContent(content);
         }
 

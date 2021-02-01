@@ -148,9 +148,9 @@ public class ExtensionManager {
                 }
             });
 
-            Button installButton = new Button("Install");
-            Button uninstallButton = new Button("Uninstall");
-            Button closeButton = new Button("Close");
+            Button installButton = new Button("\uD83D\uDCE5 Install");
+            Button uninstallButton = new Button("\uD83D\uDCE4 Uninstall");
+            Button closeButton = new Button("❌ Close");
             closeButton.setOnAction(e -> close());
             CenteredHBox buttonBox = new CenteredHBox(10, installButton, uninstallButton, closeButton);
             buttonBox.setPadding(new Insets(5));
@@ -167,7 +167,7 @@ public class ExtensionManager {
                             NotificationManager.displayException("Failed to install extension", ex);
                         }
                     }
-                    NotificationManager.displayMessage("Installed Extensions", "Restart Visual Bukkit to complete installation");
+                    NotificationManager.displayMessage("Installed Extensions", "Restart Visual Spigot to complete installation");
                 }
             });
 
@@ -178,7 +178,7 @@ public class ExtensionManager {
                     listView.getItems().remove(extension);
                     try {
                         Files.write(uninstallFile, String.join("\n", uninstallSet).getBytes(StandardCharsets.UTF_8));
-                        NotificationManager.displayMessage("Uninstalled extension", "Restart Visual Bukkit to complete uninstallation");
+                        NotificationManager.displayMessage("Uninstalled extension", "Restart Visual Spigot to complete uninstallation");
                     } catch (IOException ex) {
                         NotificationManager.displayException("Failed to uninstall extension", ex);
                     }
@@ -199,7 +199,7 @@ public class ExtensionManager {
 
             initOwner(VisualBukkit.getInstance().getPrimaryStage());
             initModality(Modality.APPLICATION_MODAL);
-            setTitle("Extension Manager");
+            setTitle("Extensions");
             setScene(scene);
         }
 

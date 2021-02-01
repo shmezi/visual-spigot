@@ -96,6 +96,8 @@ public class VisualBukkit extends Application {
         primaryStage.setTitle("Visual Spigot");
         primaryStage.setScene(scene);
         primaryStage.setMaximized(true);
+        primaryStage.setMinWidth(800);
+        primaryStage.setMinHeight(500);
         rootPane.getStylesheets().add("/style.css");
 
         try (InputStream inputStream = VisualBukkit.class.getResourceAsStream("/Visual_Spigot.png")) {
@@ -113,11 +115,14 @@ public class VisualBukkit extends Application {
         SplitPane splitPane = new SplitPane();
         SplitPane sideSplitPane = new SplitPane();
         sideSplitPane.setOrientation(Orientation.VERTICAL);
-        sideSplitPane.getItems().addAll(elementInspector, projectView);
+        sideSplitPane.getItems().addAll(elementInspector, projectView); /* THIS IS THE RIGHT STACK */
+        sideSplitPane.setStyle("-fx-border-width: 0 0 0 1 !important; -fx-border-color: rgb(0,0,0) !important; -fx-min-width: 290");
+        blockSelector.setStyle("-fx-border-width: 0 1 0 0 !important; -fx-border-color: rgb(0,0,0) !important; -fx-min-width: 260");
         splitPane.getItems().addAll(blockSelector, canvasPane, sideSplitPane);
 
         rootPane.setCenter(splitPane);
         rootPane.setTop(createMenuBar());
+        rootPane.setStyle("-fx-min-width: 700; -fx-min-height: 500");
 
         scene.addEventFilter(KeyEvent.KEY_PRESSED, e -> {
             if (e.isShortcutDown() && e.getCode() == KeyCode.S) {
@@ -151,7 +156,7 @@ public class VisualBukkit extends Application {
         MenuItem exportItem = new MenuItem("Export");
         MenuItem exitItem = new MenuItem("Save and Exit");
         MenuItem exitNoSaveItem = new MenuItem("Exit");
-        MenuItem updateItem = new MenuItem("Check for Update");
+        /*MenuItem updateItem = new MenuItem("Check for Update");*/
         saveItem.setOnAction(e -> save(true));
         renameItem.setOnAction(e -> ProjectManager.getCurrentProject().promptRename());
         openItem.setOnAction(e -> ProjectManager.promptOpenProject());
@@ -171,17 +176,20 @@ public class VisualBukkit extends Application {
                 }
             });
         });
+        /*
         updateItem.setOnAction(e -> {
             if (!checkForUpdate()) {
                 NotificationManager.displayMessage("No update", "Running latest Visual Bukkit version");
             }
         });
+        */
+
         Menu fileMenu = new Menu("File");
         fileMenu.getItems().addAll(
                 saveItem, renameItem, new SeparatorMenuItem(),
                 openItem, newItem, deleteItem, importItem, exportItem, new SeparatorMenuItem(),
-                exitItem, exitNoSaveItem, new SeparatorMenuItem(),
-                updateItem);
+                exitItem, exitNoSaveItem, new SeparatorMenuItem()
+                /*, updateItem*/);
 
         MenuItem undoItem = new MenuItem("Undo");
         MenuItem redoItem = new MenuItem("Redo");
@@ -193,7 +201,7 @@ public class VisualBukkit extends Application {
         MenuItem manageItem = new MenuItem("Manage");
         MenuItem helpItem = new MenuItem("Help");
         manageItem.setOnAction(e -> ExtensionManager.promptManage());
-        helpItem.setOnAction(e -> openURI("https://github.com/OfficialDonut/VisualBukkit/wiki/Extensions"));
+        helpItem.setOnAction(e -> openURI("https://github.com/Gryzle/VisualSpigot"));
         Menu extensionsMenu = new Menu("Extensions");
         extensionsMenu.getItems().addAll(manageItem, helpItem);
 
@@ -247,7 +255,7 @@ public class VisualBukkit extends Application {
         MenuItem spigotItem = new MenuItem("Spigot");
         spigotItem.setOnAction(e -> openURI("https://www.spigotmc.org/resources/visual-bukkit-create-plugins.76474/"));
         MenuItem discordItem = new MenuItem("Discord");
-        discordItem.setOnAction(e -> openURI("https://discord.gg/ugkvGpu"));
+        discordItem.setOnAction(e -> openURI("https://discord.gg/4kTTd9Pcqq"));
         Menu supportMenu = new Menu("Support");
         supportMenu.getItems().addAll(githubItem, spigotItem, discordItem);
 
@@ -270,18 +278,18 @@ public class VisualBukkit extends Application {
 
     @SuppressWarnings("UnstableApiUsage")
     private boolean checkForUpdate() {
-        try (InputStreamReader reader = new InputStreamReader(new URL("https://raw.githubusercontent.com/OfficialDonut/VisualBukkit/master/version").openStream(), StandardCharsets.UTF_8)) {
+        try (InputStreamReader reader = new InputStreamReader(new URL("https://raw.githubusercontent.com/Gryzle/VisualSpigot/main/version").openStream(), StandardCharsets.UTF_8)) {
             String latestVersion = CharStreams.toString(reader).trim();
             if (!version.equals(latestVersion)) {
                 /*
                 ButtonType viewButton = new ButtonType("View Update");
-                Alert alert = new Alert(Alert.AlertType.INFORMATION, "An update is available!\n\nUsing version: " + version + "\n" + "Latest version: " + latestVersion, viewButton, new ButtonType("Ignore"));
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "A Visual Spigot Update is Available! \n\nUsing Version: " + version + "\n" + "Latest version: " + latestVersion, viewButton, new ButtonType("Ignore"));
                 alert.setTitle("Update Available");
                 alert.setHeaderText(null);
                 alert.setGraphic(null);
                 alert.showAndWait().ifPresent(buttonType -> {
                     if (buttonType == viewButton) {
-                        openURI("https://github.com/OfficialDonut/VisualBukkit/releases");
+                        openURI("https://github.com/Gryzle/VisualSpigot/releases");
                     }
                 });
                 return true;
@@ -344,3 +352,4 @@ public class VisualBukkit extends Application {
         return projectView;
     }
 }
+

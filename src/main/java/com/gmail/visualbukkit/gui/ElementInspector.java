@@ -44,7 +44,6 @@ public class ElementInspector extends ScrollPane {
         borderPane.setPadding(new Insets(10));
         /*borderPane.setStyle("-fx-border-width: 0 0 5 0; -fx-border-color: #fff;");*/
 
-        setStyle("-fx-border-width: 0 0 0 1; -fx-border-color: #000;");
         setContent(borderPane);
         setFitToWidth(true);
         setFitToHeight(true);

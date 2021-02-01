@@ -64,7 +64,6 @@ public class ProjectView extends ScrollPane {
         VBox content = new VBox(10, titleLabel, gridPane, addCanvasButton, resourceFilesButton, buildButton);
         content.setPadding(new Insets(10));
 
-        setStyle("-fx-border-width: 0 0 0 1; -fx-border-color: #000;");
         setContent(content);
         setFitToWidth(true);
         setFitToHeight(true);
