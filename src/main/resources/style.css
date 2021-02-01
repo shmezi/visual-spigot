@@ -1,0 +1,142 @@
+@font-face {
+    src: url("Menlo-Regular.ttf");
+}
+
+.menu-bar {
+    -fx-background-color: #232B32;
+}
+
+.button {
+    -fx-border-radius: 20 !important;
+    -fx-border-color: transparent;
+    -fx-focus-traversable: false;
+    -fx-background-color: /*#B9BBBE*/ rgba(0,0,0,0);
+    -fx-text-fill: #B9BBBE;
+    -fx-border-color: #B9BBBE;
+    -fx-border-width: 1;
+    -fx-background-radius: 20;
+    /*-fx-font-weight: bold;*/
+    -fx-translate-x: 5;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: rgb(50,50,50) !important;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-max-width: 1;
+}
+
+.combo-box {
+    -fx-pref-width: 120;
+    -fx-min-width: 100;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+}
+
+.combo-box > .arrow-button {
+    -fx-padding: 0 5 0 0;
+    -fx-border-width: 0 !important;
+}
+
+.combo-box > .list-cell {
+    -fx-padding: 0 0 0 5;
+}
+
+.label {
+    -fx-wrap-text: true;
+}
+
+.list-view {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-padding: 0;
+}
+
+.list-view .list-cell {
+    -fx-text-color: white;
+    -fx-cursor: hand;
+}
+
+.list-cell:hover {
+    -fx-background-color: rgb(50,50,50) !important;
+}
+
+.root {
+    -fx-accent: #3F51B5;
+    -fx-background: #202225;
+    -fx-base: #303338;
+    -fx-control-inner-background: rgb(20, 20, 20);
+    -fx-control-inner-background-alt: rgb(20, 20, 20);
+    -fx-font-size: 14;
+    -fx-light-text-color: white;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+.separator {
+    -fx-background: rgb(20,20,20);
+}
+
+.tab-pane .tab {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-background-color: #202225 /*#3F51B5*/;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+.tab:hover {
+    -fx-background-color: rgb(50,50,50) !important;
+}
+
+.tab:focused {
+    -fx-background-color: #3F51B5 !important;
+}
+
+.tab-pane .tab-header-area {
+    -fx-padding: 0;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: rgb(12, 14, 17);
+}
+
+.text-area {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-font-family: "Menlo";
+    -fx-text-fill: white;
+}
+
+.text-area .content {
+    -fx-background-color: #202225;
+}
+
+.text-field {
+    /*-fx-border-color: #3E434A;*/
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: rgba(0,0,0,0);
+    /*-fx-control-inner-background: #303338;*/
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-padding: 0 3 0 3;
+    -fx-text-fill: #000;
+}
+
+.text-field:hover {
+    -fx-background-color: #F8FAFF !important;
+}
+
+.tooltip {
+    -fx-border-color: lightgray;
+    -fx-border-radius: 2;
+}
